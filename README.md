@@ -77,7 +77,42 @@ npx vercel --prod     # or netlify deploy --prod, wrangler pages deploy ./dist
 ```
 
 Set `VITE_SMARTFORM_FORM_ID` in your hosting dashboard's environment variables.
+## Related examples
+[Vite + Vue 3 contact form](https://github.com/yanghuai123456/smartform-example-vite-vue) | [Angular contact form](https://github.com/yanghuai123456/smartform-example-angular) | [smartform-js SDK](https://github.com/yanghuai123456/smartform-js)
+
+
+## FAQ
+
+### Why use this instead of Formspree?
+
+Both SmartForm and Formspree let you POST a plain HTML form to a hosted
+endpoint with no backend. SmartForm adds an AI spam filter (not just
+honeypots), AI intent classification (`sales` / `support` / `inquiry`)
+and high-value lead detection, with a free tier that includes the spam
+filter. Formspree charges per submission; SmartForm's spam filter is
+free on every plan.
+
+### Is there a free tier?
+
+Yes. AI spam filtering is enabled by default on every plan. AI intent
+classification and high-value lead detection require a paid plan (Pro
+or Business) — the dashboard enforces this and returns HTTP 402 if
+you try to enable them on a free workspace.
+
+### Do I need an API key?
+
+No. The form posts directly to a public endpoint using only an 8-char
+form ID, which is non-enumerable. The example also includes a hidden
+`_gotcha` honeypot field so naive bots cannot submit.
+
+### Do I need a backend?
+No. The form posts JSON to the public endpoint. The example is a plain React component with inline status, no build server required.
+
+## Related examples
+[Vite + Vue 3 contact form](https://github.com/yanghuai123456/smartform-example-vite-vue) | [Angular contact form](https://github.com/yanghuai123456/smartform-example-angular) | [smartform-js SDK](https://github.com/yanghuai123456/smartform-js)
+
 
 ## License
 
 MIT.
+
