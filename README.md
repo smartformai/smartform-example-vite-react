@@ -1,4 +1,4 @@
-# SmartForm + Vite + React
+# React (Vite) contact form — Formspree alternative with AI spam filtering
 
 Contact form for a Vite + React app, posting JSON to SmartForm AI.
 
